@@ -37,7 +37,7 @@ async def main() -> None:
 
 @dp.message(CommandStart())
 async def onStartCommandHandler(message: Message, state: FSMContext) -> None:
-    return await message.answer("Добро пожаловать в библиотеку, используйте команды:\n\n/books - просмотреть список всех книг\n/find [ключевое слово/фраза] - поиск книги\n/newbook - добавить книгу\nУзнать об книге: /about название;автор")
+    return await message.answer("Добро пожаловать в библиотеку, используйте команды:\n\n/books - просмотреть список всех книг\n/about [Название] [автор]\n/find [часть]\n/deletebook\n/keyboard [ключевое слово/фраза] - поиск книги\n/newbook - добавить книгу\nУзнать об книге: /about название;автор")
 
 @dp.message(Command("books"))
 async def onBooksCommandHandler(message: Message):
