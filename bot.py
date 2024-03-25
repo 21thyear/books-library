@@ -12,16 +12,11 @@ from utils import get_genres
 from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher, types
-from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import State, StatesGroup
 
 from aiogram.filters import CommandStart, Command
 from aiogram import F
 
 from aiogram.types import Message
-from aiogram.utils.keyboard import InlineKeyboardBuilder
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
@@ -29,7 +24,7 @@ if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
 bot = Bot(token=os.getenv("BOT_TOKEN"))
-dp = Dispatcher(storage=MemoryStorage())
+dp = Dispatcher()
 
 async def main() -> None:
     await createTables()
