@@ -33,7 +33,7 @@ async def getBookInfo(title: str, author: str) -> List[Tuple]:
         logging.error(f"Ошибка получения информации по книге. {e}")
         raise e
         
-async def find_books_by_details(title: str = None, author: str = None, genre: str = None) -> List[Tuple]:
+async def findBooksByDetails(title: str = None, author: str = None, genre: str = None) -> List[Tuple]:
     """
     Функция узнает книги, по некой информации, полученной от пользователя
 
